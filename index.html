@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Times</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="jumbotron">
+            <h1 class="display-4 text-center">Train Times!</h1>
+            <p class="lead text-center">Check your times! Don't miss your ride!</p>
+            <hr class="my-4">
+
+        </div>
+<!-- train schedule  -->
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card ">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="card-title">Train Schedule</h4>
+                    </div>
+                    <div class="card-body" id="trains">
+                            <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th  scope="col">Train Name</th>
+                                        <th  scope="col">Destination</th>
+                                        <th  scope="col">Frequency</th>
+                                        <th  scope="col">First Arrival</th>
+                                        <th  scope="col">Minutes Away</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="trainInfo">
+                                    
+                                    </tbody>
+                                  </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+<!-- adding trains -->
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card ">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="card-title">Add a train</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="trainInput">Train</label>
+                                <input class="form-control" id="trainInput" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="destInput">Destination</label>
+                                <input class="form-control" id="destInput" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="firstDepartTime">First Train Time</label>
+                                <input class="form-control" id="firstDepartTime" type="time">
+                            </div>
+                            <div class="form-group">
+                                <label for="freqInput">Frequency</label>
+                                <input class="form-control" id="freqInput" type="number">
+                            </div>
+                            <button class="btn btn-primary" id="addTrain" type="submit">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+         <!-- Javascript -->
+        <script type="text/javascript" src="assets/javascript/train.js"></script>
+        
+
+
+</body>
+
+</html>
