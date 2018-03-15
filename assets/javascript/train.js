@@ -70,6 +70,23 @@ $(document).ready(function () {
     });
 
     function getData(data) {
+        
+        var trains = data.val();
+        var keys = Object.keys(data);
+
+        $("#tableInfo").empty();
+        for(var i = 0; i < keys.length; i++) {
+            var tRow = $("<tr>");
+            var k = keys[i];
+
+        $("<td scope='col'>").text(trains[k].train).appendTo(tRow);
+        $("<td scope='col'>").text(trains[k].destination).appendTo(tRow);
+        $("<td scope='col'>").text(trains[k].frequency).appendTo(tRow);
+
+        $("<td scope='col'>").text(trains[k].nextTrainFormat).appendTo(tRow);
+        $("<td scope='col'>").text(trains[k].minTillTrain).appendTo(tRow);
+
+        $("#tableInfo").append(tRow);
 
         // ref.on("child_added", function (snapshot) {
 
@@ -88,24 +105,6 @@ $(document).ready(function () {
         //     console.log(snapshot.val().minTillTrain);
 
         // })
-
-
-          var trains = data.val();
-          var keys = Object.keys(data);
-
-          $("#tableInfo").empty();
-          for(var i = 0; i < keys.length; i++) {
-              var tRow = $("<tr>");
-              var k = keys[i];
-
-          $("<td scope='col'>").text(trains[k].train).appendTo(tRow);
-          $("<td scope='col'>").text(trains[k].destination).appendTo(tRow);
-          $("<td scope='col'>").text(trains[k].frequency).appendTo(tRow);
-
-          $("<td scope='col'>").text(trains[k].nextTrainFormat).appendTo(tRow);
-          $("<td scope='col'>").text(trains[k].minTillTrain).appendTo(tRow);
-
-          $("#tableInfo").append(tRow);
 
         }
     }
