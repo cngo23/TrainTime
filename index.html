@@ -11,6 +11,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/javascript/train.js"></script>
+
 
 </head>
 
@@ -23,7 +39,7 @@
             <hr class="my-4">
 
         </div>
-<!-- train schedule  -->
+        <!-- train schedule  -->
         <div class="row">
 
             <div class="col-md-12">
@@ -32,20 +48,26 @@
                         <h4 class="card-title">Train Schedule</h4>
                     </div>
                     <div class="card-body" id="trains">
-                            <table class="table">
-                                    <thead>
-                                      <tr>
-                                        <th  scope="col">Train Name</th>
-                                        <th  scope="col">Destination</th>
-                                        <th  scope="col">Frequency</th>
-                                        <th  scope="col">First Arrival</th>
-                                        <th  scope="col">Minutes Away</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody id="trainInfo">
-                                    
-                                    </tbody>
-                                  </table>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody id="trainInfo">
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
@@ -54,7 +76,7 @@
         </div>
 
         <br>
-<!-- adding trains -->
+        <!-- adding trains -->
         <div class="row">
 
             <div class="col-md-12">
@@ -67,19 +89,19 @@
                         <form role="form">
                             <div class="form-group">
                                 <label for="trainInput">Train</label>
-                                <input class="form-control" id="trainInput" type="text">
+                                <input class="form-control text" id="trainInput" type="text">
                             </div>
                             <div class="form-group">
                                 <label for="destInput">Destination</label>
-                                <input class="form-control" id="destInput" type="text">
+                                <input class="form-control text" id="destInput" type="text">
                             </div>
                             <div class="form-group">
                                 <label for="firstDepartTime">First Train Time</label>
-                                <input class="form-control" id="firstDepartTime" type="time">
+                                <input class="form-control text" id="firstDepartTime" type="time">
                             </div>
                             <div class="form-group">
                                 <label for="freqInput">Frequency</label>
-                                <input class="form-control" id="freqInput" type="number">
+                                <input class="form-control text" id="freqInput" type="number">
                             </div>
                             <button class="btn btn-primary" id="addTrain" type="submit">Submit</button>
                         </form>
@@ -89,18 +111,6 @@
             </div>
 
         </div>
-
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        
-        <!-- Firebase -->
-        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-
-         <!-- Javascript -->
-        <script type="text/javascript" src="assets/javascript/train.js"></script>
-        
 
 
 </body>
