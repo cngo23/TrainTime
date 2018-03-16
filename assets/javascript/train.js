@@ -12,7 +12,7 @@ $(document).ready(function () {
     firebase.initializeApp(config);
 
     var database = firebase.database();
-    var ref = database.ref("trains");
+    var ref = database.ref();
 
     var train = "";
     var destination = "";
@@ -70,11 +70,11 @@ $(document).ready(function () {
     });
 
     function getData(data) {
-        
-        var trains = data.val();
-        var keys = Object.keys(data);
 
-        $("#tableInfo").empty();
+        var trains = data.val();
+        var keys = Object.keys(trains);
+        //appends to page
+        $("#trainInfo").empty();
         for(var i = 0; i < keys.length; i++) {
             var tRow = $("<tr>");
             var k = keys[i];
@@ -86,25 +86,7 @@ $(document).ready(function () {
         $("<td scope='col'>").text(trains[k].nextTrainFormat).appendTo(tRow);
         $("<td scope='col'>").text(trains[k].minTillTrain).appendTo(tRow);
 
-        $("#tableInfo").append(tRow);
-
-        // ref.on("child_added", function (snapshot) {
-
-        //     console.log(snapshot.val());
-
-        //     console.log(snapshot.val().train);
-
-        //     console.log(snapshot.val().destination);
-
-        //     console.log(snapshot.val().firstDepartTime);
-
-        //     console.log(snapshot.val().frequency);
-
-        //     console.log(snapshot.val().nextTrainFormat);
-
-        //     console.log(snapshot.val().minTillTrain);
-
-        // })
+        $("#trainInfo").append(tRow);
 
         }
     }
